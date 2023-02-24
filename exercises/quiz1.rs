@@ -10,10 +10,16 @@
 // Write a function that calculates the price of an order of apples given
 // the quantity bought. No hints this time!
 
-// I AM NOT DONE
+use std::cmp::Ordering;
 
 // Put your function here!
-// fn calculate_price_of_apples {
+fn calculate_price_of_apples(count: i32) -> i32 {
+    match count.cmp(&40) {
+        Ordering::Less => count * 2,
+        Ordering::Equal => count * 2,
+        Ordering::Greater => count,
+    }
+}
 
 // Don't modify this function!
 #[test]
